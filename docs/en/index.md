@@ -8,5 +8,5 @@ This is a personal log of installing and configuring Arch Linux on a MacBook Pro
 - Display and GPU
 - Power management
 - Audio issues
-- Suspend/resume behavior
+- [Suspend/resume behavior](suspend-resume.md)
 - Wi-Fi and Bluetooth
