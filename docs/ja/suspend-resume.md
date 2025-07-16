@@ -13,9 +13,18 @@ MacBook Pro (2017, Retina, 13-inch) に Arch Linux を導入した際、サス�
 
 ## 暫定対応（Workaround）
 
-- `mem_sleep_default=deep` をカーネルパラメータに追加することで、suspend の安定性が向上した
+- 新しいカーネルの利用
+- `mem_sleep_default=deep` をカーネルパラメータに追加
 - `i915.enable_psr=0` により画面復帰時の問題を軽減
 - `NVMe` デバイスに関して D3cold を無効化（`/etc/modprobe.d/` などで設定）
 - `thunderbolt` モジュールを一時的に blacklist（resume トラブルの切り分け目的）
 
-(以下作成中)
+### 新しいカーネルの利用
+
+現在、以下のカーネルで動作確認をしています。
+なお、以前はLinux Mintを試用していましたが、公式に新しいカーネルを使うことは難しかったため、新しいカーネルを利用したいため、カーネルの更新が早いArch Linuxを利用しています。
+
+```
+$ uname -r
+6.15.4-arch2-1
+```
