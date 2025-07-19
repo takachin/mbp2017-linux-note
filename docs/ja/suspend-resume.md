@@ -15,10 +15,9 @@ MacBook Pro (2017, Retina, 13-inch) に Arch Linux を導入した際、サス�
 
 - 新しいカーネルの利用
 - resume復帰速度の改善
-    - `mem_sleep_default=deep` をカーネルパラメータに追加
-    - `i915.enable_psr=0` により画面復帰時の問題を軽減
-    - `NVMe` デバイスに関して D3cold を無効化（`/etc/modprobe.d/` などで設定）
-    - `thunderbolt` モジュールを一時的に blacklist（resume トラブルの切り分け目的）
+    - (1) d3cold_allowed の一括無効
+    - (2) PCIe Switch配下の応答遅れに対応
+    - (3) Thunderboltを通常は無効にしておく
 
 ### 新しいカーネルの利用
 
@@ -103,8 +102,45 @@ esac
 
 これで"深いスリープ"(D3 Cold)からの復帰の失敗が回避され、resumeが早く完了するようになります。
 
-#### (2) nvme.noacpi=1 をカーネルブートオプションに追加
+#### (2) PCIe Switch配下の応答遅れに対応
 
-#### (3) initramfs に resume フックが含まれていないか確認
+スリープが遅い原因を調査するとLinux未対応のApple固有のPCIe Switch系統の復帰が遅れていることがわかりました。
 
-#### (4) Thunderboltを通常は無効にしておく
+PCIe Switchについて、ChatGPTによると下記の図のようになります。
+```
+        ┌────────────┐
+        │ CPU / SoC  │
+        └────┬───────┘
+             │ PCIe x4
+     ┌───────┴──────────────┐
+     │  PCIe Switch         │
+     │ （例：0000:05:00.0)   │
+     └──┬────────┬────┬─────┘
+        │        │    │
+     NVMe     Wi-Fi  Thunderbolt
+  (05:01.0) (05:02.0) (05:04.0)
+```
+これらのPCIe Switch配下にあるNVMeやThunderboltなどがうまく復帰できず、resumeに時間がかかることがわかりました。
+
+そこで、/etc/default/grub の GRUB_CMDLINE_LINUX_DEFAULT= を下記のように変更、起動パラメータ調整します。
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet splash nvme_core.default_ps_max_latency_us=0 nvme.noacpi=1 pci=noaer i915.enable_dc=0 i915.enable_fbc=0 i915.enable_psr=0"
+```
+
+それぞれのパラメータについて一部補足します。
+
+- nvme_core.default_ps_max_latency_us=0 は、NVMeデバイスが省電力状態に入るのを防ぎ、復帰を高速化します。
+- pci=noaer はPCIのAdvanced Error Reportingを無効にし、ログに余計なエラーを出さないようにします。
+
+その後下記を実行し、起動パラメータに反映します。
+
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+これにより、一部の電力管理は無効化されるため、バッテリー持ちが若干悪くなる可能性がありますが、resumeの速度が改善されます。
+
+#### (3) Thunderboltを通常は無効にしておく
+
+(作成中)
