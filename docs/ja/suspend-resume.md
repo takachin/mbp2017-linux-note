@@ -143,4 +143,23 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 #### (3) Thunderboltを通常は無効にしておく
 
-(作成中)
+私の利用方法では外部ディスプレイを繋がない(Thnderboltを使わない)ため、思い切ってThnderboltを無効にしてしまいます。以下の手順で無効化できます。
+
+
+```
+sudo nano /etc/modprobe.d/disable-thunderbolt.conf
+```
+
+disable-thunderbolt.confに下記の内容を記載します。
+
+```
+blacklist thunderbolt
+```
+
+再起動後、Thunderboltが無効になりますが、復帰は高速化します。
+
+もしThunderboltを使いたい場合、下記のようにコマンドを実行して有効にします。
+
+```
+sudo modprobe thunderbolt
+```
