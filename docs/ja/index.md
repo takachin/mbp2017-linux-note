@@ -6,8 +6,7 @@ MacBook Pro（2017, Retina, 13-inch）に Arch Linux を入れて設定したと
 
 ## トピック（準備中）
 
-- ディスプレイとGPU
-- 電源管理
+- Arch Linuxのインストール時の注意点
+- Wi-FiとBluetooth
 - オーディオの問題
 - [サスペンド／レジュームの挙動](suspend-resume.md)
-- Wi-FiとBluetooth

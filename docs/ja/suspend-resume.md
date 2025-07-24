@@ -8,8 +8,6 @@ MacBook Pro (2017, Retina, 13-inch) に Arch Linux を導入した際、サス�
 
 - suspend に入ることはできるが、resume(復帰)後に画面が真っ黒になる
 - resume 後に操作不能となる（画面は点灯しているが入力を受け付けない）
-- resume 後にファンが高回転で回り続けることがある
-- （今後追加予定）
 
 ## 暫定対応（Workaround）
 
