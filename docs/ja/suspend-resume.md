@@ -43,7 +43,7 @@ systemctl suspend
 私の場合は~/git/tm-bin/tm-prepare_suspend.shというファイル名で保存しています。
 
 ```
-#!/bin/bash
+#!/usr/bin/env bash
 
 # /sys/devices/ 以下の全 d3cold_allowed を 0 に設定
 echo "全デバイスの d3cold_allowed を無効化中..."
