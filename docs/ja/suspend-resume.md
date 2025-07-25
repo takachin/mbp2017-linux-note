@@ -84,7 +84,7 @@ sudo nano /lib/systemd/system-sleep/tm-prepare-suspend
 logfile="/tmp/suspend.log"
 
 log() {
-  echo "[tm] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$logfile"
+  echo "$(date '+%Y-%m-%d %H:%M:%S') $1" >> "$logfile"
 }
 
 case $1 in
