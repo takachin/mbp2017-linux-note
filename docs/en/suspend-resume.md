@@ -1,9 +1,13 @@
+---
+layout: default
+title: Suspend/Resume Behavior on MacBook Pro 2017
+---
 
 # Suspend/Resume Behavior on MacBook Pro 2017
 
 ## Overview.
 
-When installing Arch Linux on a MacBook Pro (2017, Retina, 13-inch), I encountered some issues with suspend and resume behavior. This paper summarizes the observed problems, workarounds, and future issues.
+When installing Arch Linux on a MacBook Pro (2017, Retina, 13-inch, no Touch Bar), I encountered some issues with suspend and resume behavior. This paper summarizes the observed problems, workarounds, and future issues.
 
 ## Problems Observed
 

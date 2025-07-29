@@ -1,8 +1,12 @@
-# Suspend/Resume Behavior on MacBook Pro 2017
+---
+layout: default
+title: MacBook Pro 2017でLinuxを使う場合のSuspend/Resumeの設定について
+---
+# MacBook Pro 2017でLinuxを使う場合のSuspend/Resumeの設定について
 
 ## 概要（Overview）
 
-MacBook Pro (2017, Retina, 13-inch) に Arch Linux を導入した際、サスペンド（suspend）およびレジューム（resume）に関していくつかの問題が発生した。本稿では、観測された問題点と暫定的な対処法（workaround）、および今後の課題について整理する。
+MacBook Pro (2017, Retina, 13-inch, タッチバーなし) に Arch Linux を導入した際、サスペンド（suspend）およびレジューム（resume）に関していくつかの問題が発生した。本稿では、観測された問題点と暫定的な対処法（workaround）、および今後の課題について整理する。
 
 ## 問題点（Problems Observed）
 

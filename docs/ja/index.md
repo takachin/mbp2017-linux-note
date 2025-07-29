@@ -1,3 +1,8 @@
+---
+layout: default
+title: Arch Linux on MacBook Pro 2017
+---
+
 # Arch Linux on MacBook Pro 2017
 
 MacBook Pro（2017, Retina, 13-inch）に Arch Linux を入れて設定したときの個人メモです
