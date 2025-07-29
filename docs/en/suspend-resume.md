@@ -189,3 +189,9 @@ However, please note that the battery consumption during suspend is higher than 
 The contents of this page will be updated as needed.
 
 [Return to Top Page](index.md)
+
+---
+
+<footer>
+    Contact: <a href="https://x.com/takachin" target="_blank">@takachin on X</a>
+</footer>

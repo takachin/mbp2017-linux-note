@@ -186,3 +186,9 @@ sudo modprobe thunderbolt
 本ページの内容は随時更新予定です。
 
 [← トップページに戻る](index.md)
+
+---
+
+<footer>
+    Contact: <a href="https://x.com/takachin" target="_blank">@takachin on X</a>
+</footer>

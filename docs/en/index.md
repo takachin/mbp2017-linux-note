@@ -15,3 +15,9 @@ This is a personal log of installing and configuring Arch Linux on a MacBook Pro
 - Audio issues
 - [Suspend/resume behavior](suspend-resume.md)
 - Wi-Fi and Bluetooth
+
+---
+
+<footer>
+    Contact: <a href="https://x.com/takachin" target="_blank">@takachin on X</a>
+</footer>
