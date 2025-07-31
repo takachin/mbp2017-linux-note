@@ -11,7 +11,7 @@ MacBook Pro（2017, Retina, 13-inch）に Arch Linux を入れて設定したと
 
 ## トピック（準備中）
 
-- Arch Linuxのインストール時の注意点
+- [Arch Linuxのインストール時の注意点](install.md)
 - Wi-FiとBluetooth
 - オーディオの問題
 - [サスペンド／レジュームの挙動](suspend-resume.md)
