@@ -10,11 +10,11 @@ This is a personal log of installing and configuring Arch Linux on a MacBook Pro
 > Work in progress 🚧
 
 ## Topics (coming soon)
-- Display and GPU
-- Power management
+- [Points to note when installing Arch Linux](install.md)
+- Wi-Fi and Bluetooth
 - Audio issues
 - [Suspend/resume behavior](suspend-resume.md)
-- Wi-Fi and Bluetooth
+
 
 ---
 
